@@ -11,3 +11,6 @@ allure-report/
 .idea/
 .vs/
 *.sln.DotSettings.user
+
+# local agent settings
+opencode.jsonc
