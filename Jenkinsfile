@@ -20,7 +20,7 @@ pipeline {
     }
 
     stages {
-        stage('Environment check') {
+        stage('Проверка окружения') {
             steps {
                 sh '''
                   echo "--- dotnet ---"
@@ -33,14 +33,14 @@ pipeline {
             }
         }
 
-        stage('Restore and Build') {
+        stage('Сборка') {
             steps {
                 sh 'dotnet restore MyProject-demo.nopcommerce.com.sln'
                 sh 'dotnet build MyProject-demo.nopcommerce.com.sln --no-restore -v q'
             }
         }
 
-        stage('Run Tests') {
+        stage('Тесты') {
             steps {
                 sh 'dotnet test MyProject-demo.nopcommerce.com.sln --no-build --logger "trx;LogFileName=results.trx"'
             }
