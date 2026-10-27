@@ -13,7 +13,7 @@ pipeline {
 
     options {
         // не держать устаревшие сборки
-        buildDiscarder(logRotator(daysToKeepStr: '30', buildsToKeepStr: '20'))
+        buildDiscarder(logRotator(daysToKeepStr: '30', numToKeepStr: '20'))
         // отмена устаревших запусков той же ветки
         disableConcurrentBuilds()
         timestamps()
