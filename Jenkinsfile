@@ -7,6 +7,8 @@ pipeline {
     environment {
         // запуск Chrome без окна (BaseTest.cs реагирует на эту переменную)
         HEADLESS = 'true'
+        // путь к бинарнику браузера в контейнере (BaseTest.cs использует как BinaryLocation)
+        CHROME_BINARY_PATH = '/usr/bin/chromium'
         DOTNET_CLI_TELEMETRY_OPTOUT = '1'
         DOTNET_NOLOGO = 'true'
     }
@@ -60,7 +62,7 @@ pipeline {
             // опубликовать Allure-отчёт (ссылка на отчёт — на странице сборки)
             allure results: [[path: 'allure-results']], reportBuildPolicy: 'ALWAYS'
             // сохранить сырые результаты
-            archiveArtifacts artifacts: 'MyProject-demo.nopcommerce.com/TestResults/**, allure-results/**',
+            archiveArtifacts artifacts: 'MyProject-demo.nopcommerce.com/TestResults/**, allure-results/**, MyProject-demo.nopcommerce.com/bin/Debug/net10.0/chromedriver.log',
                 allowEmptyArchive: true
         }
     }
