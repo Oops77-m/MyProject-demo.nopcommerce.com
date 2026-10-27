@@ -1,0 +1,8 @@
+{
+  "directory": "allure-results",
+  "failures": {
+    "maxRetry": 1
+  },
+  "specExamples": false,
+  "titleAnalysis": false
+}
