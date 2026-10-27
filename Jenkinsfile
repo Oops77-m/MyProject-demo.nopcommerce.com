@@ -7,8 +7,8 @@ pipeline {
     environment {
         // запуск Chrome без окна (BaseTest.cs реагирует на эту переменную)
         HEADLESS = 'true'
-        // путь к бинарнику браузера в контейнере (BaseTest.cs использует как BinaryLocation)
-        CHROME_BINARY_PATH = '/usr/bin/chromium'
+        // selenium-контейнер (BaseTest.cs подключается к нему как RemoteWebDriver)
+        SELENIUM_URL = 'http://selenium-chrome:4444'
         DOTNET_CLI_TELEMETRY_OPTOUT = '1'
         DOTNET_NOLOGO = 'true'
     }
