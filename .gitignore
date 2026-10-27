@@ -1,0 +1,11 @@
+# Build artifacts
+bin/
+obj/
+
+# Test results and reports
+TestResults/
+allure-results/
+allure-report/
+
+# IDE
+.idea/
